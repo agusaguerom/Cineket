@@ -1,35 +1,38 @@
 package com.example.cineket.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-public class Funciones {
+public class Funcion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "pelicula_id", nullable = false)
     private Pelicula pelicula;
 
+    @ManyToOne
+    @JoinColumn(name = "sala_id", nullable = false)
     private Sala sala;
 
     private LocalDateTime fechaHora;
 
-    public Funciones(){}
 
-    public Funciones(Long id, Pelicula pelicula, Sala sala, LocalDateTime fechaHora) {
+
+    public Funcion(){}
+
+    public Funcion(Long id, Pelicula pelicula, Sala sala, LocalDateTime fechaHora) {
         this.id = id;
         this.pelicula = pelicula;
         this.sala = sala;
         this.fechaHora = fechaHora;
     }
 
-    public Funciones( Pelicula pelicula, Sala sala, LocalDateTime fechaHora) {
+    public Funcion(Pelicula pelicula, Sala sala, LocalDateTime fechaHora) {
         this.pelicula = pelicula;
         this.sala = sala;
         this.fechaHora = fechaHora;

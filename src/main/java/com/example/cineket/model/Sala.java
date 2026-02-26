@@ -2,6 +2,7 @@ package com.example.cineket.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,10 @@ public class Sala {
     private int capacidad;
 
     @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Asiento> asientos;
+    private List<Asiento> asientos = new ArrayList<>();
+
+    @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL)
+    private List<Funcion> funciones = new ArrayList<>();
 
     public Sala(){}
 

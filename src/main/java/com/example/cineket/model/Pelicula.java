@@ -1,10 +1,10 @@
 package com.example.cineket.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Pelicula {
@@ -15,6 +15,8 @@ public class Pelicula {
     private String nombre;
     private int duracion;
 
+    @OneToMany(mappedBy = "pelicula", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Funcion> funciones = new ArrayList<>();
 
     public Pelicula() {
     }
