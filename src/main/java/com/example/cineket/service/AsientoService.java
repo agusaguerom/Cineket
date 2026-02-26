@@ -15,26 +15,33 @@ public class AsientoService implements IAsientoService{
 
     @Override
     public List<Asiento> getAsientos() {
-        return List.of();
+        return asientoRepository.findAll();
     }
 
     @Override
     public Asiento getAsientoById(Long id) {
-        return null;
+        return asientoRepository.findById(id).orElse(null);
     }
 
     @Override
     public Asiento crearAsiento(Asiento asiento) {
-        return null;
+        return asientoRepository.save(asiento);
     }
 
     @Override
     public Asiento updateAsiento(Long id, Asiento asiento) {
+        Asiento asientoExistente = asientoRepository.findById(id).orElse(null);
+
+        if(asientoExistente != null){
+            asientoExistente.setColumna(asiento.getColumna());
+            asientoExistente.setFila(asiento.getFila());
+            return asientoRepository.save(asientoExistente);
+        }
         return null;
     }
 
     @Override
     public void deleteAsiento(Long id) {
-
+        asientoRepository.deleteById(id);
     }
 }
