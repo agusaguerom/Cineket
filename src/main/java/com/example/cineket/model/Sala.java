@@ -11,7 +11,8 @@ public class Sala {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nombre;
-    private int capacidad;
+    private int filas;
+    private int columnas;
 
     @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Asiento> asientos = new ArrayList<>();
@@ -21,15 +22,17 @@ public class Sala {
 
     public Sala(){}
 
-    public Sala( String nombre, int capacidad) {
+    public Sala( String nombre, int filas, int columnas) {
         this.nombre = nombre;
-        this.capacidad = capacidad;
+        this.filas = filas;
+        this.columnas = columnas;
     }
 
-    public Sala(Long id, String nombre, int capacidad) {
+    public Sala(Long id, String nombre, int filas, int columnas) {
         this.id = id;
         this.nombre = nombre;
-        this.capacidad = capacidad;
+        this.filas = filas;
+        this.columnas = columnas;
     }
 
     public Long getId() {
@@ -48,11 +51,19 @@ public class Sala {
         this.nombre = nombre;
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public int getFilas() {
+        return filas;
     }
 
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+    public void setFilas(int capacidad) {
+        this.filas = capacidad;
+    }
+
+    public int getColumnas() {
+        return columnas;
+    }
+
+    public void setColumnas(int columnas) {
+        this.columnas = columnas;
     }
 }

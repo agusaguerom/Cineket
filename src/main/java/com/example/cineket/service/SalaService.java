@@ -29,7 +29,8 @@ public class SalaService implements ISalaService{
         Sala salaExistente = salaRepository.findById(id).orElse(null);
        if(salaExistente != null){
            salaExistente.setNombre(sala.getNombre());
-           salaExistente.setCapacidad(sala.getCapacidad());
+           salaExistente.setFilas(sala.getFilas());
+           salaExistente.setColumnas(sala.getColumnas());
            return  salaRepository.save(sala);
        }
        return null;
