@@ -503,61 +503,29 @@ cineket/
 
 ## 📝 Notas de Desarrollo
 
-### Mejoras Futuras Sugeridas
+### Mejoras Futuras al proyecto
 
 1. **Autenticación y Autorización**
-   - Implementar Spring Security
+   - Se Implementara Spring Security
    - JWT para autenticación stateless
    - Roles: ADMIN, USER, EMPLOYEE
 
 2. **Validación Mejorada**
-   - Usar Bean Validation (Jakarta Validation)
    - Anotaciones @Valid en DTOs
    - Manejo centralizado de excepciones
 
-3. **Documentación API**
-   - Integrar Springdoc OpenAPI (Swagger)
-   - Generar documentación automática
 
-4. **Performance**
-   - Implementar caché con Redis
+3. **Performance**
+   - Caché con Redis
    - Paginación en listados
    - Lazy loading optimization
 
-5. **Pruebas**
+4. **Pruebas**
    - Pruebas unitarias con JUnit 5
    - Pruebas de integración
-   - Mockito para mocks
-
-6. **Seguridad**
-   - HTTPS obligatorio
-   - CORS configurado
-   - Validación de entrada completa
-
-7. **Transacciones**
-   - Manejar excepciones de concurrencia
-   - Implementar optimistic locking
-
----
-
-## 📞 Soporte
-
-Para más información sobre Spring Boot, visita:
-- [Documentación oficial Spring Boot](https://spring.io/projects/spring-boot)
-- [Guía de referencia JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)
-- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
-
----
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
-
----
-
-**Última actualización:** 3 de Marzo de 2026  
-**Versión:** 0.0.1-SNAPSHOT
 
 
+
+Este proyecto es de código abiert
 
 
