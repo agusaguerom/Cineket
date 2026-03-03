@@ -524,8 +524,3 @@ cineket/
    - Pruebas unitarias con JUnit 5
    - Pruebas de integración
 
-
-
-Este proyecto es de código abiert
-
-
