@@ -2,6 +2,7 @@ package com.example.cineket.service;
 
 import com.example.cineket.model.Funcion;
 import com.example.cineket.repository.FuncionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -10,7 +11,7 @@ import java.util.List;
 @Service
 public class FuncionService implements IFuncionService {
 
-
+    @Autowired
     private FuncionRepository funcionRepository;
 
     @Override

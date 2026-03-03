@@ -2,6 +2,7 @@ package com.example.cineket.controller;
 
 import com.example.cineket.model.Sala;
 import com.example.cineket.service.ISalaService;
+import com.example.cineket.service.SalaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
@@ -15,7 +16,7 @@ import java.util.List;
 public class SalaController {
 
     @Autowired
-    private ISalaService salaService;
+    private SalaService salaService;
 
     @GetMapping
     public ResponseEntity<List<Sala>> getSalas(){

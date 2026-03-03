@@ -3,6 +3,7 @@ package com.example.cineket.service;
 import com.example.cineket.model.Asiento;
 import com.example.cineket.model.Reserva;
 import com.example.cineket.repository.ReservaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Service
 public class ReservaService implements IReservaService{
 
+    @Autowired
     private ReservaRepository reservaRepository;
 
     @Override
