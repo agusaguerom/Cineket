@@ -1,5 +1,6 @@
 package com.example.cineket.service;
 
+import com.example.cineket.model.Asiento;
 import com.example.cineket.model.Reserva;
 import com.example.cineket.repository.ReservaRepository;
 import org.springframework.stereotype.Service;
@@ -42,5 +43,21 @@ public class ReservaService implements IReservaService{
     @Override
     public void deleteReserva(Long id) {
         reservaRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Reserva> getReservasByFuncionId(Long funcionId) {
+        return reservaRepository.findByFuncionId(funcionId);
+    }
+
+    @Override
+    public List<Asiento> findAsientosDisponibles(Long funcionId) {
+        return reservaRepository.findAsientosDisponibles(funcionId);
+    }
+
+    @Override
+    public boolean existsByFuncionIdAndAsientoId(Long funcionId, Long asientoId) {
+        return reservaRepository.existsByFuncionIdAndAsientoId(funcionId, asientoId);
+
     }
 }
