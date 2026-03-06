@@ -1,17 +1,26 @@
 package com.example.cineket.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Schema(name = "Sala", description = "Representa una sala de cine con asientos distribuidos en filas y columnas")
 public class Sala {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Schema(description = "ID único de la sala", example = "1")
     private Long id;
+
+    @Schema(description = "Nombre de la sala", example = "Sala 1", required = true)
     private String nombre;
+
+    @Schema(description = "Número de filas en la sala", example = "10", required = true)
     private int filas;
+
+    @Schema(description = "Número de columnas (asientos por fila) en la sala", example = "12", required = true)
     private int columnas;
 
     @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL, orphanRemoval = true)
