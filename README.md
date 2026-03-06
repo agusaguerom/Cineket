@@ -353,7 +353,8 @@ Si prefieres herramientas de terminal, puedes verificar el estado de salud de la
 
 ```bash
 curl -X GET "http://localhost:8080/api/peliculas" -H "accept: application/json"
----
+```
+
 ## 📁 Estructura del Proyecto
 
 ```
