@@ -327,6 +327,33 @@ La aplicación estará disponible en: http://localhost:8080
 
 ---
 
+## 🚀 Cómo Probar la API
+
+Cineket utiliza **Swagger UI (OpenAPI 3)**, lo que permite interactuar con todos los endpoints de forma visual y en tiempo real sin necesidad de herramientas externas como Postman.
+
+### 1. Acceso a la Documentación Interactiva
+Una vez que la aplicación esté en ejecución, abre tu navegador y dirígete a:
+> 🔗 **[http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)**
+
+### 2. Pasos para realizar una prueba (Ejemplo: Reserva de Asiento)
+Para probar el flujo principal del sistema, sigue estos pasos en la interfaz de Swagger:
+
+1.  **Listar Películas**: Busca el tag `Películas`, despliega el método `GET /api/peliculas` y haz clic en **"Try it out"** > **"Execute"**. Copia el ID de una película.
+2.  **Ver Funciones**: Usa el ID de la película en `GET /api/funciones/pelicula/{id}` para ver qué salas y horarios están disponibles.
+3.  **Realizar Reserva**:
+    * Ve al tag `Reservas` y abre `POST /api/reservas`.
+    * Haz clic en **"Try it out"**.
+    * Completa el JSON con el `funcionId` y el `asientoId` deseado.
+    * Haz clic en **"Execute"** y verifica que el código de respuesta sea `201 Created`.
+
+
+
+### 3. Alternativa con Postman / cURL
+Si prefieres herramientas de terminal, puedes verificar el estado de salud de la API con:
+
+```bash
+curl -X GET "http://localhost:8080/api/peliculas" -H "accept: application/json"
+
 ## 📁 Estructura del Proyecto
 
 ```
